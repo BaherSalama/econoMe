@@ -7,6 +7,6 @@
 /run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
 /run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
 /run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
 /run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
 /run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/version.json
-/run/media/broly/projects/econoMe/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
