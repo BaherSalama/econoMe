@@ -1,0 +1,10 @@
+^E:\UNI EDUCATION\SECOND SEMESTER 2024\MOBILE COMPUTING\ECONOME\BUILD\WINDOWS\X64\CMAKEFILES\13176029DD7DBB6CD7ECF994F5437B8B\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

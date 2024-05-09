@@ -1,0 +1,11 @@
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/icudtl.dat
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/flutter_windows.dll
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.bin
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/AssetManifest.json
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/FontManifest.json
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/kernel_blob.bin
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/NOTICES.Z
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
+E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/runner/Debug/data/flutter_assets/version.json

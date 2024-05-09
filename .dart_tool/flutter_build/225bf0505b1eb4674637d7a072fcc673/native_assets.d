@@ -1,0 +1,1 @@
+ E:\\UNI\ EDUCATION\\Second\ Semester\ 2024\\Mobile\ Computing\\econoMe\\.dart_tool\\flutter_build\\225bf0505b1eb4674637d7a072fcc673\\native_assets.yaml: 

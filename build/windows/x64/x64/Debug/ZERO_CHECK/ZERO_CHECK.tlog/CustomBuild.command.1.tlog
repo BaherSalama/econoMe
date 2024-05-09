@@ -1,0 +1,10 @@
+^E:\UNI EDUCATION\SECOND SEMESTER 2024\MOBILE COMPUTING\ECONOME\BUILD\WINDOWS\X64\CMAKEFILES\13176029DD7DBB6CD7ECF994F5437B8B\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SE:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/windows" "-BE:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "E:/UNI EDUCATION/Second Semester 2024/Mobile Computing/econoMe/build/windows/x64/econome.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

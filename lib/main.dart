@@ -124,14 +124,13 @@ class _MyCustomFormState extends State<Add> {
             )),
         body: Column(
           children: [
+            Text('Name'),
             TextField(
               controller: name,
             ),
+            Text('Information'),
             TextField(
               controller: data,
-            ),
-            TextField(
-              controller: type,
             ),
             TextButton(
               style: ButtonStyle(
@@ -146,7 +145,7 @@ class _MyCustomFormState extends State<Add> {
                     Node(name: name.text, data: data.text, type: widget.sad));
                 Navigator.pop(context);
               },
-              child: Text('TextButton'),
+              child: Text('Add'),
             )
           ],
         ));
@@ -167,15 +166,40 @@ Future main() async {
   runApp(const MyApp());
 }
 
-class Edit extends StatelessWidget {
-  const Edit({super.key});
+class Edit extends StatefulWidget {
+  final Node sad;
+  const Edit({super.key, this.sad = const Node(name: "", data: "", type: 0)});
+  @override
+  State<Edit> createState() => EditState();
+}
+
+class EditState extends State<Edit> {
+  final name = TextEditingController();
+  final data = TextEditingController();
+  final type = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      name.text = widget.sad.name;
+      data.text = widget.sad.data;
+    });
+  }
+
+  @override
+  void dispose() {
+    name.dispose();
+    data.dispose();
+    type.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Center(
-              child: Text("Add"),
-            ),
+            title: const Text("Edit"),
             leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -184,26 +208,32 @@ class Edit extends StatelessWidget {
             )),
         body: Column(
           children: [
-            const Spacer(),
-            Container(
-                // margin: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    const DropdownMenuItem(
-                      child: Text("sad"),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: const Text("sad"),
-                    )
-                  ],
-                )),
+            Text('Name'),
+            TextField(
+              controller: name,
+            ),
+            Text('Information'),
+            TextField(
+              controller: data,
+            ),
+            TextButton(
+              style: ButtonStyle(
+                overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                    (Set<MaterialState> states) {
+                  if (states.contains(MaterialState.focused)) return Colors.red;
+                  return null; // Defer to the widget's default.
+                }),
+              ),
+              onPressed: () {
+                updateNode(Node(
+                    id: widget.sad.id,
+                    name: name.text,
+                    data: data.text,
+                    type: widget.sad.type));
+                Navigator.pop(context);
+              },
+              child: Text('Edit'),
+            )
           ],
         ));
   }
@@ -275,7 +305,13 @@ class Main extends State<MyWidget> {
                       actions: [
                         PieAction(
                           tooltip: const Text('Edit'),
-                          onSelect: () => {},
+                          onSelect: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Edit(sad: item)),
+                            )
+                          },
                           child: const Icon(Icons.info),
                         ),
                         PieAction(
@@ -288,7 +324,7 @@ class Main extends State<MyWidget> {
                                 type: 1)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.access_time),
                         ),
                         PieAction(
                           tooltip: const Text('Delete'),
@@ -305,7 +341,7 @@ class Main extends State<MyWidget> {
                                 type: 2)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.adjust),
                         ),
                         PieAction(
                           tooltip: const Text('Done'),
@@ -317,7 +353,7 @@ class Main extends State<MyWidget> {
                                 type: 3)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.check_circle_outlined),
                         ),
                       ],
                       child: pic_4text(node: item),
@@ -345,7 +381,13 @@ class Main extends State<MyWidget> {
                       actions: [
                         PieAction(
                           tooltip: const Text('Edit'),
-                          onSelect: () => {},
+                          onSelect: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Edit(sad: item)),
+                            )
+                          },
                           child: const Icon(Icons.info),
                         ),
                         PieAction(
@@ -358,7 +400,7 @@ class Main extends State<MyWidget> {
                                 type: 0)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.backpack),
                         ),
                         PieAction(
                           tooltip: const Text('Delete'),
@@ -375,7 +417,7 @@ class Main extends State<MyWidget> {
                                 type: 2)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.adjust),
                         ),
                         PieAction(
                           tooltip: const Text('Done'),
@@ -387,7 +429,7 @@ class Main extends State<MyWidget> {
                                 type: 3)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.check_circle_outlined),
                         ),
                       ],
                       child: pic_4text(node: item),
@@ -415,7 +457,13 @@ class Main extends State<MyWidget> {
                       actions: [
                         PieAction(
                           tooltip: const Text('Edit'),
-                          onSelect: () => {},
+                          onSelect: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Edit(sad: item)),
+                            )
+                          },
                           child: const Icon(Icons.info),
                         ),
                         PieAction(
@@ -428,7 +476,7 @@ class Main extends State<MyWidget> {
                                 type: 0)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.backpack),
                         ),
                         PieAction(
                           tooltip: const Text('Delete'),
@@ -445,7 +493,7 @@ class Main extends State<MyWidget> {
                                 type: 1)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.access_time),
                         ),
                         PieAction(
                           tooltip: const Text('Done'),
@@ -457,7 +505,7 @@ class Main extends State<MyWidget> {
                                 type: 3)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.check_circle_outlined),
                         ),
                       ],
                       child: pic_4text(node: item),
@@ -485,7 +533,13 @@ class Main extends State<MyWidget> {
                       actions: [
                         PieAction(
                           tooltip: const Text('Edit'),
-                          onSelect: () => {},
+                          onSelect: () => {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Edit(sad: item)),
+                            )
+                          },
                           child: const Icon(Icons.info),
                         ),
                         PieAction(
@@ -498,7 +552,7 @@ class Main extends State<MyWidget> {
                                 type: 0)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.backpack),
                         ),
                         PieAction(
                           tooltip: const Text('Delete'),
@@ -515,7 +569,7 @@ class Main extends State<MyWidget> {
                                 type: 1)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.access_time),
                         ),
                         PieAction(
                           tooltip: const Text('Doing'),
@@ -527,7 +581,7 @@ class Main extends State<MyWidget> {
                                 type: 2)),
                             mad()
                           },
-                          child: const Icon(Icons.info),
+                          child: const Icon(Icons.adjust),
                         ),
                       ],
                       child: pic_4text(node: item),
@@ -630,6 +684,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         // Define the default brightness and colors.
