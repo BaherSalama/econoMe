@@ -287,7 +287,7 @@ class Main extends State<MyWidget> {
           ),
         ],
         title: const Center(
-          child: Text("TO DO LIST"),
+          child: Text("kanban board"),
         ),
       ),
       body: TabBarView(
